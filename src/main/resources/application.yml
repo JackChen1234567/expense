@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: expense
+netty:
+  default:
+    allocator:
+      max-order: 3
+datasources:
+  default:
+    dialect: MYSQL
+    db-type: mysql
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/micronaut
+    username: root
+    password: cx197599
+jpa:
+  default:
+    properties:
+      hibernate:
+        show-sql: true
+        hbm2ddl:
+          auto: validate
+        connection:
+          db-type: mysql
+    reactive: true
+flyway:
+  datasources:
+    default:
+      enabled: true
+

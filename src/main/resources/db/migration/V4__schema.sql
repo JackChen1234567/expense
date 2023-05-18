@@ -1,0 +1,10 @@
+CREATE TABLE payment (
+    id   BIGINT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    name  VARCHAR(255) NOT NULL,
+    amount  DOUBLE(12,2) NOT NULL,
+    expense_id BIGINT NOT NULL,
+        CONSTRAINT FK_EXPENSE FOREIGN KEY (expense_id) REFERENCES expense (id),
+    user_id BIGINT NOT NULL,
+    CONSTRAINT FK_USER FOREIGN KEY (user_id) REFERENCES users (id)
+);
+
